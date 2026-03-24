@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* ✅ Prevents layout issues */
+}
+
+body {
+    background-color: #FCE77D; /* 🌞 Bright Sunflower Yellow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif; /* ✅ Ensures consistent font */
+}
+
+.parent {
+    background-color: #ffffff; /* Clean white card */
+    min-height: 45vh;
+    min-width: 40vh;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* ✅ Adds subtle shadow */
+}
+
+form {
+    margin: 2rem 0;
+}
+
+form select,
+form button,
+form input {
+    width: 100%;
+    border: 1px solid #FFB703; /* 🌟 Golden Yellow Border */
+    outline: none;
+    border-radius: 0.75rem;
+    font-size: 0.85rem; 
+    height: 2rem; 
+}
+
+form input {
+    border: 1px solid #FFB703; /* 🟡 Consistent Border */
+}
+
+.dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.75rem;
+}
+
+.select-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    border-radius: 1rem;
+    border: 1px solid #FFB703; /* 🟡 Golden Yellow Border */
+    padding: 0.3rem; /* ✅ Adds spacing inside container */
+}
+
+.select-container img {
+    max-width: 2rem;
+    margin-right: 0.5rem; /* ✅ Ens*/
+}
+
+i{
+    margin-top: 12px;
+}
+
+.msg{
+    margin:1.5rem 0 1.5rem 0;
+    color: #0066FF; /* 🔵 Electric Blue Accent for message */
+    font-weight: bold;
+}
+
+.submit{
+    cursor: pointer;
+    background-color: #FF3F34; /* 🔥 Bright Coral Red Primary Button */
+    color: white;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+    background-color: #D62C1A; /* ❤️ Deeper Red on Hover */
+}

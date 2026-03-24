@@ -1,0 +1,84 @@
+
+let baseURL="https://v6.exchangerate-api.com/v6/72185491f005eedc80829cf0/pair";
+
+
+
+
+async function getExchangeRate(from, to,url) {
+     try {
+        let response = await fetch(url);
+        let data = await response.json();
+        let final=`1 ${from} = ${data.conversion_rate} ${to}`;
+        
+        return final;
+    } catch (error) {
+        return (`Error fetching exchange rate: , ${error}`);
+    }
+}
+
+
+
+
+
+const dropdowns=document.querySelectorAll(".dropdown select");
+
+for(let select of dropdowns){//selecting "from" and "to"
+    for(currencyCode in countryList){//select each elements in countryList array
+        let newOption=document.createElement("option");//creating option
+        newOption.innerText=currencyCode;//putting currency code as its text and value
+        newOption.value=currencyCode;
+
+        if(select.name==="from" && currencyCode==="USD"){
+            newOption.selected="selected";//default from option
+        }
+        else if(select.name==="to" && currencyCode==="PKR"){
+            newOption.selected="selected";//default to option
+        }
+        select.append(newOption);//adding new option in select
+    }
+    select.addEventListener("change",(evt)=>{
+        updateFlag(evt.target);
+    })
+}
+
+const updateFlag=((element)=>{
+    console.log(element);//select
+    let currCode=element.value;//select option
+    let countryCode=countryList[currCode];//select option's country
+    let newSrc=`https://flagsapi.com/${countryCode}/flat/64.png`;//add country in img source to fetch its respective flag
+    let img=element.parentElement.querySelector("img");
+    img.src=newSrc;//add new flag
+});
+
+const btn=document.querySelector(".submit");
+const fromCurr=document.querySelector(".from select");
+const toCurr=document.querySelector(".to select");
+
+btn.addEventListener("click",async (evt)=>{
+     evt.preventDefault();
+     let amount=document.querySelector("form input");
+     let amountVal=amount.value;
+    // console.log("Amount Value Is",amountVal);
+    // console.log(fromCurr.value,toCurr.value);
+
+
+     let url=`${baseURL}/${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}`;
+
+      let response=await fetch(url);
+      let data=await response.json();
+
+      let finalOutput=await getExchangeRate(fromCurr.value,toCurr.value,url);
+      console.log(finalOutput);
+
+      let msgElement=document.querySelector(".msg");
+      msgElement.innerText=finalOutput;
+
+      let numbers=finalOutput.match(/\d+(\.\d+)?/g);
+      console.log(numbers);
+      num1=parseFloat(numbers[0])*amountVal;
+      num2=parseFloat(numbers[1])*amountVal;
+    console.log(num1,num2);
+
+      let newMsg = finalOutput.replace(numbers[0], num1).replace(numbers[1], num2);
+    msgElement.innerText=newMsg;
+});
