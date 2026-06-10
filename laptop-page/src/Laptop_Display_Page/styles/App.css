@@ -216,7 +216,7 @@ body{
 @media(max-width:600px){
   .product-display{
   width: 300px;
-  height: 80vh;
+  height: 70vh;
 }
 .product-img{
  width: 250px; 
