@@ -1,152 +1,126 @@
-# 💻 Laptop Landing Page
+# 💻 Laptop Listing Detail Page
 
-A modern, responsive laptop landing page project built with **React** and **Vite**. This project showcases a sleek product landing page design with interactive components and a smooth user experience.
+A responsive laptop listing page built with **React** and **Vite** as part of the React Developer Internship Task for Indus Technetronic.
 
-## 🎯 Project Overview
+## 🚀 Live Demo
 
-This is a beginner-level frontend project designed to practice core web development concepts, including:
-- Component-based architecture with React
-- Responsive design and CSS styling
-- Interactive UI elements
-- Vite for fast development and optimized builds
+https://laptoplistingpage.vercel.app/
+
+## 📂 GitHub Repository
+
+https://github.com/ali09267/Frontend-Projects/tree/main/laptop-page
 
 ## ✨ Features
 
-- **Responsive Design** - Mobile, tablet, and desktop friendly
-- **Modern UI** - Clean and professional layout
-- **Interactive Components** - Smooth interactions and animations
-- **Fast Performance** - Built with Vite for optimized build times
-- **ESLint Configuration** - Code quality standards included
+### Required Features
+
+* Display laptop image
+* Laptop title and price
+* Specifications section
+* Seller information card
+* Contact Seller button
+* Responsive design for desktop and mobile devices
+
+### Bonus Features
+
+* Image gallery slider
+* Loading skeleton screen
+* Clean component-based folder structure
 
 ## 🛠️ Tech Stack
 
-- **React** - UI library for building components
-- **Vite** - Next generation frontend tooling
-- **CSS** - Styling and responsive design
-- **JavaScript** - Core functionality
-- **Oxc** (via @vitejs/plugin-react) - Fast JavaScript linting
+* React
+* Vite
+* JavaScript (ES6+)
+* CSS3
 
 ## 📋 Prerequisites
 
-Before you begin, ensure you have the following installed:
-- **Node.js** (v14 or higher) - [Download here](https://nodejs.org/)
-- **npm** (comes with Node.js) or **yarn**
+Before running the project, install:
 
-## 🚀 Setup Instructions
+* Node.js (v14 or later)
+* npm
 
-### 1. Clone the Repository
+## ⚙️ Installation
+
+Clone the repository:
 
 ```bash
 git clone https://github.com/ali09267/Frontend-Projects.git
 cd Frontend-Projects/laptop-page
-### 2. Install Dependencies
-Using npm:
+```
 
-bash
+Install dependencies:
+
+```bash
 npm install
-Or using yarn:
+```
 
-bash
-yarn install
-3. Start Development Server
-bash
+Start the development server:
+
+```bash
 npm run dev
-Or with yarn:
+```
 
-bash
-yarn dev
-The application will open in your browser at http://localhost:5173 (or another available port).
+The application will be available at:
 
-4. Build for Production
-bash
+```text
+http://localhost:5173
+```
+
+## 🏗️ Production Build
+
+Create a production build:
+
+```bash
 npm run build
-Or with yarn:
+```
 
-bash
-yarn build
-This creates an optimized production build in the dist folder.
+Preview the production build locally:
 
-5. Preview Production Build
-bash
+```bash
 npm run preview
-Or with yarn:
+```
 
-bash
-yarn preview
-📁 Project Structure
-Code
+## 📁 Project Structure
+
+```text
 laptop-page/
 ├── src/
-│   ├── components/        # React components
-│   ├── assets/            # Images and static files
-│   ├── styles/            # CSS files
-│   ├── App.jsx            # Main App component
-│   ├── App.css            # App styles
-│   └── main.jsx           # Entry point
-├── public/                # Public assets
-├── index.html             # HTML template
-├── vite.config.js         # Vite configuration
-├── package.json           # Project dependencies
-├── eslintrc.cjs           # ESLint configuration
-└── README.md              # This file
-📝 Available Scripts
-Command	Description
-npm run dev	Start development server with HMR
-npm run build	Create optimized production build
-npm run preview	Preview production build locally
-npm run lint	Run ESLint to check code quality
-🎨 Styling
-The project uses CSS for styling with a focus on:
+│   ├── components/
+│   ├── assets/
+│   ├── styles/
+│   ├── App.jsx
+│   └── main.jsx
+├── public/
+├── package.json
+├── vite.config.js
+└── README.md
+```
 
-Responsive Design - Mobile-first approach
-Flexbox & Grid - Modern layout techniques
-CSS Variables - Easy theme customization
-Animations - Smooth transitions and effects
-🔧 ESLint Configuration
-The project comes with ESLint pre-configured. To extend the configuration:
+## 🎯 Assignment Requirements Completed
 
-Modify eslintrc.cjs for custom rules
-For production apps, consider enabling TypeScript with type-aware lint rules
-See Vite ESLint Documentation for more details.
+| Requirement                 | Status |
+| --------------------------- | ------ |
+| Laptop Image                | ✅      |
+| Laptop Title & Price        | ✅      |
+| Specifications Section      | ✅      |
+| Seller Information Card     | ✅      |
+| Contact Seller Button       | ✅      |
+| Responsive Design           | ✅      |
+| Image Slider (Bonus)        | ✅      |
+| Loading Skeleton (Bonus)    | ✅      |
+| Component Structure (Bonus) | ✅      |
 
-🚀 Deployment
-Deploy to Vercel
-bash
-npm install -g vercel
-vercel
-Deploy to Netlify
-bash
-npm run build
-# Then drag and drop the 'dist' folder to Netlify
-🤝 Contributing
-This is a beginner-level learning project. Feel free to:
+```text
+project-root/
+└── screenshot.png
+```
 
-Modify and improve the design
-Add new features
-Experiment with different layouts
-Practice CSS and JavaScript concepts
-📚 Learning Resources
-React Documentation
-Vite Documentation
-MDN Web Docs
-CSS-Tricks
-💡 Tips for Learning
-Start by exploring the component structure
-Experiment with modifying styles in src/styles/
-Try adding new interactive features with React
-Use browser DevTools to debug and inspect
-Compare desktop and mobile views
-📄 License
-This project is part of the Frontend-Projects repository and is available for educational purposes.
+## 👨‍💻 Author
 
-🎓 About This Project
-This project is part of a series of beginner-level frontend projects designed to practice core web development concepts. It's perfect for:
+Ali Ahmed
 
-Learning React basics
-Understanding responsive design
-Practicing CSS styling
-Getting familiar with Vite build tools
+## 📄 License
 
-bash
-npm run build -- --debug
-Happy Coding! 🎉 If you found this helpful, please consider starring the Frontend-Projects repository.
+This project was created for internship evaluation and educational purposes.
