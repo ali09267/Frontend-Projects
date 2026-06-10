@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: rgb(16,16,44); /* Dark blue */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+ .questions-container{
+    background-color: rgb(215, 222, 227);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  width: 400px;
+  max-width: 90%;
+  text-align: left;
+ } 
+ .prev,.next,.submit {
+    width: 120px; /* Adjust as needed for width */
+    margin: 10px; /* Adds spacing between buttons */
+    background-color: rgb(0, 191, 255); /* Light blue background */
+    color: aliceblue; /* White font */
+    padding: 10px 20px; /* Adds some padding for a better look */
+    border: none; /* Removes default borders */
+    border-radius: 5px; /* Adds rounded corners */
+    cursor: pointer; /* Makes it clickable */
+    font-weight:600; /* Makes the font look stronger */
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: rgb(0, 191, 255,0.7); /* Slightly darker blue when hovered */
+}
+
+.button-container{
+display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Adds spacing between buttons */
+}
+
+@media (max-width: 600px) {
+    .questions-container {
+        width: 90%; /* Make it more adaptable */
+        padding: 20px;
+    }
+    
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+    }
+    
+    .prev, .next, .submit {
+        width: 90%; /* Full-width buttons for better tap targets */
+    }
+}
+
+@media (max-width: 355px) {
+    .questions-container {
+        width: 70%; /* Make it more adaptable */
+        padding: 20px;
+        margin-left: 20px;
+    }
+    
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+    }
+    
+    .prev, .next, .submit {
+        width: 90%; /* Full-width buttons for better tap targets */
+    }
+}
+

@@ -1,0 +1,90 @@
+const apiKey= "9212ce7b7f0ac9c5bcaa03863c15661e";//api key to open door of api house
+const city="Hyderabad";
+
+async function getWeather(city){
+    try{
+        const baseURL=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;//opening door using api key
+
+        let response=await fetch(baseURL);//waiting for response after opening the door
+
+        if (!response.ok) { // If city is not found (404)
+            return "⚠ City not found! Please enter a valid city name.";
+        }
+        
+        let data=await response.json();//convert that response in to native form i.e.JSON
+        let final = `Weather of ${city} is ${data.weather[0].description}, temperature is ${data.main.temp}°C.`;
+        
+        return final;
+    }
+    catch(error){
+        return "⚠ Error fetching weather data. Please try again";
+    }
+}
+
+async function readInput(){
+  let inputVal=document.getElementById("inputID").value;
+  let temp=await getWeather(inputVal);
+  return temp;
+}
+
+document.addEventListener("keydown",async(event)=>{
+    if(event.key==="Enter"){
+    let msg=await readInput();
+    displayToDiv(msg);
+    }
+})
+
+function displayToDiv(msg){
+    let displayDiv=document.querySelector(".display");
+    displayDiv.innerText=msg;
+
+    if (msg.includes("⚠")) {
+        displayDiv.style.color = "red"; 
+        displayDiv.style.backgroundImage = "none"; 
+        return; 
+    }
+
+    let tempValue=msg.match(/-?[\d.]+/)[0];
+    displayPic(tempValue,displayDiv);
+}
+
+function displayPic(tempValue,displayDiv) {
+    if(tempValue>40){
+        displayDiv.style.backgroundImage="url('Above40degree.jpg')";
+        displayDiv.style.backgroundSize = "cover"; 
+displayDiv.style.backgroundPosition = "center";
+displayDiv.style.backgroundRepeat = "no-repeat";
+     }
+    else if(tempValue>=30 && tempValue<=40){
+        displayDiv.style.backgroundImage="url('30-40degree.jpg')";
+        displayDiv.style.backgroundSize = "cover"; 
+        displayDiv.style.backgroundPosition = "center";
+        displayDiv.style.backgroundRepeat = "no-repeat";
+    }
+    else if(tempValue>=20 && tempValue<30){
+        displayDiv.style.backgroundImage="url('20-30degree2.jpeg')";
+        displayDiv.style.backgroundSize = "cover"; 
+        displayDiv.style.backgroundPosition = "center";
+        displayDiv.style.backgroundRepeat = "no-repeat";
+
+    }
+    else if(tempValue>=10 && tempValue<20){
+        displayDiv.style.backgroundImage="url('coolweather.jpeg')";
+        displayDiv.style.backgroundSize = "cover"; 
+        displayDiv.style.backgroundPosition = "center";
+        displayDiv.style.backgroundRepeat = "no-repeat";
+    }
+    else if(tempValue>=0 && tempValue<10){
+        displayDiv.style.backgroundImage="url('coldweather2.jpeg')";
+        displayDiv.style.backgroundSize = "cover"; 
+        displayDiv.style.backgroundPosition = "center";
+        displayDiv.style.backgroundRepeat = "no-repeat";
+    }
+    else if(tempValue<0){
+        displayDiv.style.backgroundImage="url('below0.avif')";
+        displayDiv.style.backgroundSize = "cover"; 
+        displayDiv.style.backgroundPosition = "center";
+        displayDiv.style.backgroundRepeat = "no-repeat";
+    }
+    
+}
